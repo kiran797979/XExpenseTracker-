@@ -30,7 +30,8 @@ const expenseReducer = (state, action) => {
     case ACTIONS.ADD_EXPENSE:
       return { 
         ...state, 
-        expenses: [...state.expenses, { ...action.payload, id: Date.now().toString() }] 
+        expenses: [...state.expenses, { ...action.payload, id: Date.now().toString() }],
+        balance: state.balance - parseFloat(action.payload.price)
       };
     
     case ACTIONS.UPDATE_EXPENSE:
