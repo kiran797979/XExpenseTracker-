@@ -8,8 +8,8 @@ const AddExpenseModal = ({ editExpense, setEditExpense }) => {
   const [formData, setFormData] = useState({
     title: '',
     price: '',
-    category: '',
-    date: ''
+    category: 'Food', // default to Food
+    date: new Date().toISOString().split('T')[0]
   });
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const AddExpenseModal = ({ editExpense, setEditExpense }) => {
       setFormData({
         title: '',
         price: '',
-        category: '',
+        category: 'Food', // default to Food
         date: new Date().toISOString().split('T')[0]
       });
     }
@@ -66,7 +66,7 @@ const AddExpenseModal = ({ editExpense, setEditExpense }) => {
     setFormData({
       title: '',
       price: '',
-      category: '',
+      category: 'Food', // default to Food
       date: new Date().toISOString().split('T')[0]
     });
   };
